@@ -197,11 +197,7 @@ def GetAllAddr():
             if "IPv4" in x
         ]
     else:
-        return [
-            x.split("/")[0].strip().split(" ")[1]
-            for x in _str(check_output(["ip", "address"]), "ascii").split("\n")
-            if "inet " in x and "127.0." not in x
-        ]
+        return ['0.0.0.0']
 
 
 def SearchXM(devices, address=""):
